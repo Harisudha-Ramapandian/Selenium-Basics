@@ -1,0 +1,7 @@
+// Fetching the Url
+    driver.get("https://www.trademe.co.nz/a/");
+    
+//Finding how many links
+    int numberofLinks = driver.findElements(By.xpath("/html/body/tm-root/div[1]/main/div/tm-dynamic-homepage/tm-homepage-in-with-the-new-campaign-header/nav/div[2]/tm-homepage-search-header-vertical-list/ul/li[1]/a")).size();
+    System.out.println("The number of links is "+ numberofLinks);
+    driver.close();
