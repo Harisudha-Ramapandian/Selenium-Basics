@@ -1,0 +1,40 @@
+// To fetch url
+    driver.get("https://www.leafground.com/input.xhtml");
+    
+//Type your name
+    driver.findElement(By.id("j_idt88:name")).sendKeys("Hattori");
+    
+// Append country
+    driver.findElement(By.id("j_idt88:j_idt91")).sendKeys(" Chennai");
+    
+//Verify if text box is disabled
+    WebElement disable = driver.findElement(By.id("j_idt88:j_idt93"));
+    boolean enable = disable.isEnabled();
+    System.out.println(enable);
+    
+// Clear the typed text
+    driver.findElement(By.id("j_idt88:j_idt95")).clear();
+    
+//Retrieve the typed text
+    String value = driver.findElement(By.id("j_idt88:j_idt97")).getAttribute("value");
+// To print the value
+    System.out.println(value);
+    
+// Type email and click tab
+    driver.findElement(By.id("j_idt88:j_idt99")).sendKeys("hattori@gmail.com"+Keys.TAB);
+   
+// Type about yourself
+    driver.findElement(By.id("j_idt88:j_idt101")).sendKeys("Nothing to say");
+   
+// press enter and confirm error message
+    driver.findElement(By.id("j_idt106:thisform:age")).sendKeys(Keys.ENTER);
+   
+// error message
+    WebElement error = driver.findElement(By.id("j_idt106:thisform:j_idt110"));
+    boolean message = error.isDisplayed();
+    System.out.println(message);
+   
+//Confirm Label position change
+    driver.findElement(By.id("j_idt106:float-input")).click();
+   
+	}
