@@ -1,0 +1,36 @@
+//To fetch url
+    driver.get("https://www.leafground.com/button.xhtml");
+											
+//To confirm if button is enable 
+		WebElement disabledbutton=driver.findElement(By.id("j_idt88:j_idt92"));
+		boolean enable=disabledbutton.isEnabled();
+		System.out.println(enable);
+			    
+//To find the position of submit button
+		WebElement buttonPosition=driver.findElement(By.xpath("//*[@id=\'j_idt88:j_idt94\']/span[2]"));
+		Point xy=  buttonPosition.getLocation();
+		int Xvalue= xy.getX();
+		int Yvalue= xy.getY();
+		System.out.println("X value :"+ Xvalue + "Y value :"+ Yvalue);
+			    			
+			    
+//To find the save button colour
+		WebElement saveButtonColour=driver.findElement(By.id("j_idt88:j_idt96"));
+		boolean colour= saveButtonColour.isEnabled();
+		System.out.println(colour);
+			   
+//To the find the height and width of this button
+// Use get size
+		WebElement size=driver.findElement(By.id("j_idt88:j_idt98"));
+		int height= size.getSize().getHeight();
+		int width=size.getSize().getWidth();
+		System.out.println("Height:"+height +"width:"+width);
+			    
+//Mouse over and confirm the colour changed
+		WebElement ColourChange=driver.findElement(By.id("j_idt88:j_idt100"));
+		boolean Colour=ColourChange.isEnabled();
+		System.out.println(Colour);
+			    
+//Click and Confirm title
+		WebElement Click=driver.findElement(By.id("j_idt88:j_idt90"));
+		Click.click();
