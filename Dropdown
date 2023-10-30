@@ -1,0 +1,13 @@
+System.setProperty("webdriver.chrome.driver", "Location");
+// With Chrome Options
+		ChromeOptions c = new ChromeOptions(); // I'm new here...
+		c.addArguments("--remote-allow-origins=*"); // I'm new here...
+		WebDriver driver = new ChromeDriver(c); // c is declared and setup above...
+// To get an url
+		driver.get("https://www.trademe.co.nz/a/motors");
+		
+//Select tool
+		WebElement dropDown4 = driver.findElement(By.name("selectedMake"));
+//class for Dropdown
+		Select select = new Select(dropDown4);
+		select.selectByIndex(4);
