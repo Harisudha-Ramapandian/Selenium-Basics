@@ -1,0 +1,20 @@
+//To fetch url
+  driver.get("https://www.leafground.com/select.xhtml;jsessionid=node01ck3qp5wqglkr1bz4pztdywqez203169.node0");
+		
+//Favourite UI tool
+	WebElement FavouriteUITool = driver.findElement(By.xpath("//*[@id=\'j_idt87\']/div/div[1]/div[1]/div/div/select"));
+//To select a element from the dropdown, we have to use "Select" class
+		 
+	 Select select = new Select (FavouriteUITool);
+	select.selectByVisibleText("Puppeteer");
+		
+//To get size
+	List<WebElement> listOfOptions = select.getOptions();
+	int size = listOfOptions.size();
+	System.out.println("Number of Options:" +size);
+		
+//To fetch options
+//Creating the variable type = option
+	List<WebElement> Options = driver.findElements(By.xpath("//*[@id=\'j_idt87\']/div/div[1]/div[1]/div/div/select"));
+	for(WebElement option: Options) {
+	System.out.println(option.getText());
