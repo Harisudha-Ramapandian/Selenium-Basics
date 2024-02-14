@@ -1,0 +1,27 @@
+//To fetch url
+  driver.get("https://the-internet.herokuapp.com/javascript_alerts");
+		
+//Click JS Alert
+	WebElement JSAlert = driver.findElement(By.xpath("//*[@id=\'content\']/div/ul/li[1]/button"));
+	JSAlert.click();
+		
+//Switching the drive to alert
+	Alert alert =driver.switchTo().alert();
+//To print alert text
+	System.out.println(alert.getText());
+	alert.accept();
+		
+//Click JS Confirm
+	WebElement JSConfirm = driver.findElement(By.xpath("//*[@id=\'content\']/div/ul/li[2]/button"));
+	JSConfirm.click();
+	Alert confirm = driver.switchTo().alert();
+	System.out.println(confirm.getText());
+	confirm.dismiss();
+		
+//Click JS Prompt
+	WebElement JSPrompt = driver.findElement(By.xpath("//*[@id=\'content\']/div/ul/li[3]/button"));
+	JSPrompt.click();
+	Alert prompt = driver.switchTo().alert();
+	System.out.println(prompt.getText());
+	prompt.sendKeys("JS Prompt");
+	prompt.accept();
