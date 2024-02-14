@@ -30,7 +30,10 @@
 		WebElement ColourChange=driver.findElement(By.id("j_idt88:j_idt100"));
 		boolean Colour=ColourChange.isEnabled();
 		System.out.println(Colour);
-			    
+// Click and Check Hidden button
+	   WebElement hiddenButton=driver.findElement(By.id("j_idt88:j_idt102:imageBtn"));
+	   hiddenButton.click();
+	    			    
 //Click and Confirm title
 		WebElement Click=driver.findElement(By.id("j_idt88:j_idt90"));
 		Click.click();
