@@ -1,0 +1,29 @@
+//To fetch url
+  driver.get("https://www.leafground.com/input.xhtml");
+		
+//To enter text in text box
+		WebElement emailbox=driver.findElement(By.id("j_idt88:name"));
+		emailbox.sendKeys("Tester");
+		
+//To append text(adding additional text). Sendkeys= Input
+		WebElement appendBox=driver.findElement(By.id("j_idt88:j_idt91"));
+		appendBox.sendKeys("Location");
+		
+//To Get the entered tex. Get Attribute= Get request
+		WebElement getTextBox=driver.findElement(By.name("j_idt88:j_idt97"));
+		String value= getTextBox.getAttribute("value");		
+		
+//To Clear the typed text. Clear= clear the text
+		WebElement clearBox=driver.findElement(By.name("j_idt88:j_idt95"));
+		clearBox.clear();
+//To print 		
+		System.out.println(value);
+		
+//Clicking the box is disabled
+		WebElement disabledBox=driver.findElement(By.name("j_idt88:j_idt93"));
+
+//Using Boolean expression
+		boolean enable= disabledBox.isEnabled();
+
+//To print the boolean expression
+		System.out.println(enable);
