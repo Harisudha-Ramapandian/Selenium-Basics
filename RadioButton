@@ -1,0 +1,9 @@
+//To Fectch url
+  driver.get("https://www.leafground.com/radio.xhtml");
+//Selecting FavouriteBrowser		
+	WebElement FavoriteBrowser = driver.findElement(By.xpath("//*[@id=\'j_idt87:console1\']/tbody/tr/td[4]/label"));
+	FavoriteBrowser.click();
+//To check unselected radio button		
+	WebElement UnselectedtRadioButton = driver.findElement(By.xpath("//*[@id=\'j_idt87:console2\']/tbody/tr/td[4]/div"));
+	boolean notselected = UnselectedtRadioButton.isSelected();
+	System.out.println(notselected);
