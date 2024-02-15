@@ -1,0 +1,43 @@
+//To fetch url
+  driver.get("https://www.leafground.com/window.xhtml");
+		
+		
+// Used to identify parent window
+	String oldWindow=driver.getWindowHandle();
+		
+//To open new window
+	WebElement newWindow=driver.findElement(By.xpath("//*[@id=\'j_idt88:new\']/span"));
+	newWindow.click();
+				
+//To move control to new window
+//Used for each loop, it will iterate values in the handles. If you press ctrl space you will this format:  for(String string : handles)
+				
+	Set <String> handles= driver.getWindowHandles();
+	for (String newwindow : handles) {
+	driver.switchTo().window(newwindow);
+			}
+//To close current window
+	driver.close();
+				
+	driver.switchTo().window(oldWindow);
+				
+//Find the number of opened tabs
+	WebElement openMultipleTabs=driver.findElement(By.xpath("//*[@id=\'j_idt88:j_idt91\']/span"));
+	openMultipleTabs.click();
+	int numberOfWindows=driver.getWindowHandles().size();
+	System.out.println("No of windows opened:"+numberOfWindows);
+				
+//To close all window except primary
+	WebElement closeWindow=driver.findElement(By.id("j_idt88:j_idt93"));
+	closeWindow.click();
+				
+	Set<String> newWindowHandles=driver.getWindowHandles();
+					
+	for (String allWindows : newWindowHandles) {
+	if (!allWindows.equals(oldWindow)) {
+	driver.switchTo().window(allWindows);
+	driver.close();
+					}}
+						
+//To close all window including parent and child
+	driver.quit();
