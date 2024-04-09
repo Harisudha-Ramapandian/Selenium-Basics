@@ -1,0 +1,15 @@
+driver.get("https://www.google.co.nz/");
+// Method 1
+		driver.findElement(By.id("APjFqb")).sendKeys("Test" + Keys.ENTER);
+// Method 2 - Using \n
+    driver.findElement(By.id("APjFqb")).sendKeys("Test \n");
+// Method 3 - Using Submit
+		WebElement search = driver.findElement(By.id("APjFqb"));
+		search.sendKeys("Test");
+		search.submit();
+// Method 4 - Using Robot class
+    WebElement search = driver.findElement(By.id("APjFqb"));
+		search.sendKeys("Test");
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
