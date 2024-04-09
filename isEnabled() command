@@ -1,0 +1,11 @@
+driver.get("https://www.leafground.com/button.xhtml");
+		
+		//Confirm if the button is disabled
+		WebElement disabledBox= driver.findElement(By.id("j_idt88:j_idt92"));
+		boolean enabled= disabledBox.isEnabled();
+		System.out.println(enabled);
+		
+		//Find the Save button color
+		WebElement findTheSaveBbuttonColor= driver.findElement(By.id("j_idt88:j_idt96"));
+		boolean enabled1= findTheSaveBbuttonColor.isEnabled();
+		System.out.println(enabled1);
