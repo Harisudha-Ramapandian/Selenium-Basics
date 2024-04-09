@@ -1,0 +1,9 @@
+// We need to use "Dimension class"
+
+// I used some random numbers for width and height
+    Dimension size = new Dimension(450,600);
+
+// passing object of Dimension "size" in to setSize
+		driver.manage().window().setSize(size);
+
+		driver.get("https://www.seek.co.nz/");
