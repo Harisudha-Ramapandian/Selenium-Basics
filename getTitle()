@@ -1,0 +1,4 @@
+    driver.get("https://www.google.co.nz/");
+		
+		String title = driver.getTitle();
+		System.out.println("Title is"+ title);
