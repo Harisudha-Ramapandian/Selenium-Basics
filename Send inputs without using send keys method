@@ -1,0 +1,21 @@
+driver.get("https://www.google.co.nz/");
+		
+		WebElement search = driver.findElement(By.id("APjFqb"));
+
+// Method 1 - Using Java Script Executor		
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("arguments[0].value='Test'", search);
+
+// Method 2 - Using Robot class
+    driver.switchTo().activeElement();
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_T);
+		robot.keyRelease(KeyEvent.VK_T);
+		robot.keyPress(KeyEvent.VK_E);
+		robot.keyRelease(KeyEvent.VK_E);
+		robot.keyPress(KeyEvent.VK_S);
+		robot.keyRelease(KeyEvent.VK_S);
+		robot.keyPress(KeyEvent.VK_T);
+		robot.keyRelease(KeyEvent.VK_T);
+		
+		
