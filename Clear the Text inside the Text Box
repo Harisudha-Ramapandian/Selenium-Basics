@@ -1,0 +1,5 @@
+        driver.get("https://www.leafground.com/input.xhtml");
+		
+//Clear the typed text. Clear= clear the text
+				WebElement clearBox=driver.findElement(By.name("j_idt88:j_idt95"));
+				clearBox.clear();
